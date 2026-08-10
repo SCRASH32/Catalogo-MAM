@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,9 @@
             color: #222;
         }
 
-        /* ENCABEZADO */
+        /* =========================
+           ENCABEZADO
+        ========================= */
 
         header {
             background: #d71920;
@@ -37,7 +40,9 @@
             font-size: 16px;
         }
 
-        /* BUSCADOR */
+        /* =========================
+           BUSCADOR
+        ========================= */
 
         .buscador {
             max-width: 500px;
@@ -58,7 +63,9 @@
             border-color: #d71920;
         }
 
-        /* GALERÍA */
+        /* =========================
+           GALERÍA
+        ========================= */
 
         .galeria {
             max-width: 1200px;
@@ -75,30 +82,39 @@
             border-radius: 12px;
             overflow: hidden;
             cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
-            transition: 0.25s;
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+
+            transition: transform 0.25s, box-shadow 0.25s;
         }
 
         .producto:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
         }
 
         .producto img {
             width: 100%;
             height: 230px;
+
             display: block;
+
             object-fit: contain;
+
             padding: 10px;
+
             background: white;
         }
 
-        /* VENTANA GRANDE */
+        /* =========================
+           VISOR GRANDE
+        ========================= */
 
         .visor {
             display: none;
 
             position: fixed;
+
             z-index: 9999;
 
             left: 0;
@@ -107,7 +123,7 @@
             width: 100%;
             height: 100%;
 
-            background: rgba(0,0,0,0.92);
+            background: rgba(0, 0, 0, 0.92);
 
             align-items: center;
             justify-content: center;
@@ -121,10 +137,12 @@
 
             border-radius: 8px;
 
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
         }
 
-        /* BOTÓN CERRAR */
+        /* =========================
+           BOTÓN CERRAR
+        ========================= */
 
         .cerrar {
             position: absolute;
@@ -146,7 +164,9 @@
             color: #ff4444;
         }
 
-        /* BOTONES ANTERIOR / SIGUIENTE */
+        /* =========================
+           BOTONES ANTERIOR / SIGUIENTE
+        ========================= */
 
         .anterior,
         .siguiente {
@@ -158,7 +178,7 @@
 
             border: none;
 
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
 
             color: white;
 
@@ -171,12 +191,12 @@
 
             border-radius: 8px;
 
-            transition: 0.2s;
+            transition: background 0.2s;
         }
 
         .anterior:hover,
         .siguiente:hover {
-            background: rgba(255,255,255,0.4);
+            background: rgba(255, 255, 255, 0.4);
         }
 
         .anterior {
@@ -187,7 +207,9 @@
             right: 20px;
         }
 
-        /* NÚMERO DE IMAGEN */
+        /* =========================
+           NÚMERO DE IMAGEN
+        ========================= */
 
         .numero {
             position: absolute;
@@ -200,7 +222,7 @@
 
             color: white;
 
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
 
             padding: 8px 15px;
 
@@ -209,16 +231,25 @@
             font-size: 15px;
         }
 
-        /* SIN RESULTADOS */
+        /* =========================
+           SIN RESULTADOS
+        ========================= */
 
         .sin-resultados {
             grid-column: 1 / -1;
+
             text-align: center;
+
             padding: 50px;
+
             color: #777;
+
+            font-size: 18px;
         }
 
-        /* RESPONSIVE */
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media (max-width: 900px) {
 
@@ -270,7 +301,12 @@
     </style>
 </head>
 
+
 <body>
+
+    <!-- =========================
+         ENCABEZADO
+    ========================= -->
 
     <header>
         <h1>CATALOGO</h1>
@@ -278,34 +314,85 @@
     </header>
 
 
+    <!-- =========================
+         BUSCADOR
+    ========================= -->
+
     <div class="buscador">
+
+        <input
+            type="text"
+            id="buscar"
+            placeholder="Buscar producto por número..."
+            oninput="buscar()"
+            autocomplete="off"
+        >
 
     </div>
 
 
+    <!-- =========================
+         GALERÍA
+    ========================= -->
+
     <div class="galeria" id="galeria"></div>
 
 
-    <!-- VISOR DE IMAGEN -->
+    <!-- =========================
+         VISOR DE IMAGEN
+    ========================= -->
 
     <div class="visor" id="visor">
 
-        <span class="cerrar" onclick="cerrarVisor()">
+        <!-- CERRAR -->
+
+        <span
+            class="cerrar"
+            onclick="cerrarVisor()"
+            aria-label="Cerrar"
+        >
             &times;
         </span>
 
-        <button class="anterior" onclick="imagenAnterior()">
+
+        <!-- ANTERIOR -->
+
+        <button
+            class="anterior"
+            onclick="imagenAnterior()"
+            aria-label="Imagen anterior"
+        >
             &#10094;
         </button>
 
-        <img id="imagenGrande" src="" alt="Producto">
 
-        <button class="siguiente" onclick="imagenSiguiente()">
+        <!-- IMAGEN GRANDE -->
+
+        <img
+            id="imagenGrande"
+            src=""
+            alt="Producto"
+        >
+
+
+        <!-- SIGUIENTE -->
+
+        <button
+            class="siguiente"
+            onclick="imagenSiguiente()"
+            aria-label="Imagen siguiente"
+        >
             &#10095;
         </button>
 
-        <div class="numero" id="numeroImagen">
-            1 / 50
+
+        <!-- CONTADOR -->
+
+        <div
+            class="numero"
+            id="numeroImagen"
+        >
+            1 / 51
         </div>
 
     </div>
@@ -313,50 +400,103 @@
 
     <script>
 
-        const galeria = document.getElementById("galeria");
+        /* =========================
+           CONFIGURACIÓN
+        ========================= */
 
-        const visor = document.getElementById("visor");
+        const TOTAL_IMAGENES = 51;
 
-        const imagenGrande = document.getElementById("imagenGrande");
 
-        const numeroImagen = document.getElementById("numeroImagen");
+        /* =========================
+           ELEMENTOS
+        ========================= */
+
+        const galeria =
+            document.getElementById("galeria");
+
+        const visor =
+            document.getElementById("visor");
+
+        const imagenGrande =
+            document.getElementById("imagenGrande");
+
+        const numeroImagen =
+            document.getElementById("numeroImagen");
+
+        const buscador =
+            document.getElementById("buscar");
+
+
+        /* =========================
+           IMAGEN ACTUAL
+        ========================= */
 
         let imagenActual = 1;
 
 
-        /* CREAR LAS 50 IMÁGENES */
+        /* =========================
+           CREAR GALERÍA
+        ========================= */
 
         function mostrarImagenes() {
 
             galeria.innerHTML = "";
 
-            for (let i = 1; i <= 50; i++) {
+            for (
+                let i = 1;
+                i <= TOTAL_IMAGENES;
+                i++
+            ) {
 
-                const producto = document.createElement("div");
+                const producto =
+                    document.createElement("div");
 
-                producto.className = "producto";
+                producto.className =
+                    "producto";
 
                 producto.dataset.numero = i;
 
+
                 producto.innerHTML = `
                     <img
-                        src="imagenes/${i}.png"
+                        src="${i}.png"
                         alt="Producto ${i}"
                         loading="lazy"
-                        onerror="this.parentElement.style.display='none'"
                     >
                 `;
 
+
+                /* ABRIR VISOR */
+
                 producto.onclick = function() {
+
                     abrirVisor(i);
+
                 };
 
+
+                /* SI LA IMAGEN NO EXISTE */
+
+                const imagen =
+                    producto.querySelector("img");
+
+                imagen.onerror = function() {
+
+                    producto.style.display = "none";
+
+                };
+
+
                 galeria.appendChild(producto);
+
             }
+
         }
 
 
-        /* ABRIR IMAGEN */
+        /* =========================
+           ABRIR VISOR
+        ========================= */
 
         function abrirVisor(numero) {
 
@@ -367,131 +507,251 @@
             visor.style.display = "flex";
 
             document.body.style.overflow = "hidden";
+
         }
 
 
-        /* ACTUALIZAR VISOR */
+        /* =========================
+           ACTUALIZAR VISOR
+        ========================= */
 
         function actualizarVisor() {
 
             imagenGrande.src =
-                "imagenes/" + imagenActual + ".png";
+                imagenActual + ".png";
 
             imagenGrande.alt =
                 "Producto " + imagenActual;
 
             numeroImagen.textContent =
-                imagenActual + " / 50";
+                imagenActual + " / " + TOTAL_IMAGENES;
+
         }
 
 
-        /* CERRAR */
+        /* =========================
+           CERRAR VISOR
+        ========================= */
 
         function cerrarVisor() {
 
             visor.style.display = "none";
 
             document.body.style.overflow = "auto";
+
         }
 
 
-        /* ANTERIOR */
+        /* =========================
+           IMAGEN ANTERIOR
+        ========================= */
 
         function imagenAnterior() {
 
             imagenActual--;
 
             if (imagenActual < 1) {
-                imagenActual = 50;
+
+                imagenActual =
+                    TOTAL_IMAGENES;
+
             }
 
             actualizarVisor();
+
         }
 
 
-        /* SIGUIENTE */
+        /* =========================
+           IMAGEN SIGUIENTE
+        ========================= */
 
         function imagenSiguiente() {
 
             imagenActual++;
 
-            if (imagenActual > 50) {
+            if (
+                imagenActual >
+                TOTAL_IMAGENES
+            ) {
+
                 imagenActual = 1;
+
             }
 
             actualizarVisor();
+
         }
 
 
-        /* BUSCAR */
+        /* =========================
+           BUSCADOR
+        ========================= */
 
         function buscar() {
 
             const texto =
-                document.getElementById("buscar").value
-                .toLowerCase()
-                .trim();
+                buscador.value
+                    .toLowerCase()
+                    .trim();
+
 
             const productos =
-                document.querySelectorAll(".producto");
+                document.querySelectorAll(
+                    ".producto"
+                );
 
-            productos.forEach(producto => {
 
-                const numero =
-                    producto.dataset.numero;
+            let encontrados = 0;
 
-                if (
-                    numero.includes(texto) ||
-                    texto === ""
-                ) {
-                    producto.style.display = "block";
-                } else {
-                    producto.style.display = "none";
+
+            productos.forEach(
+                producto => {
+
+                    const numero =
+                        producto.dataset.numero;
+
+
+                    if (
+                        numero.includes(texto)
+                    ) {
+
+                        producto.style.display =
+                            "block";
+
+                        encontrados++;
+
+                    } else {
+
+                        producto.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+
+            /* MENSAJE SIN RESULTADOS */
+
+            let mensaje =
+                document.getElementById(
+                    "sinResultados"
+                );
+
+
+            if (encontrados === 0) {
+
+                if (!mensaje) {
+
+                    mensaje =
+                        document.createElement(
+                            "div"
+                        );
+
+                    mensaje.id =
+                        "sinResultados";
+
+                    mensaje.className =
+                        "sin-resultados";
+
+                    mensaje.textContent =
+                        "No se encontró ningún producto.";
+
+                    galeria.appendChild(
+                        mensaje
+                    );
+
                 }
 
-            });
+            } else {
+
+                if (mensaje) {
+
+                    mensaje.remove();
+
+                }
+
+            }
+
         }
 
 
-        /* CERRAR HACIENDO CLICK AFUERA */
+        /* =========================
+           CERRAR AL HACER CLICK AFUERA
+        ========================= */
 
-        visor.addEventListener("click", function(event) {
+        visor.addEventListener(
+            "click",
+            function(event) {
 
-            if (event.target === visor) {
-                cerrarVisor();
+                if (
+                    event.target === visor
+                ) {
+
+                    cerrarVisor();
+
+                }
+
             }
+        );
 
-        });
+
+        /* =========================
+           TECLADO
+        ========================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                /* ESC */
+
+                if (
+                    event.key === "Escape" &&
+                    visor.style.display === "flex"
+                ) {
+
+                    cerrarVisor();
+
+                }
 
 
-        /* TECLADO */
+                /* IZQUIERDA */
 
-        document.addEventListener("keydown", function(event) {
+                if (
+                    event.key === "ArrowLeft" &&
+                    visor.style.display === "flex"
+                ) {
 
-            if (visor.style.display !== "flex") {
-                return;
+                    imagenAnterior();
+
+                }
+
+
+                /* DERECHA */
+
+                if (
+                    event.key === "ArrowRight" &&
+                    visor.style.display === "flex"
+                ) {
+
+                    imagenSiguiente();
+
+                }
+
             }
-
-            if (event.key === "Escape") {
-                cerrarVisor();
-            }
-
-            if (event.key === "ArrowLeft") {
-                imagenAnterior();
-            }
-
-            if (event.key === "ArrowRight") {
-                imagenSiguiente();
-            }
-
-        });
+        );
 
 
-        /* CARGAR GALERÍA */
+        /* =========================
+           CARGAR GALERÍA
+        ========================= */
 
         mostrarImagenes();
 
     </script>
 
 </body>
+
 </html>
