@@ -520,16 +520,6 @@
          BUSCADOR
     ========================= -->
 
-    <div class="buscador">
-
-        <input
-            type="text"
-            id="buscar"
-            placeholder="🔍 Buscar producto por número..."
-            oninput="buscar()">
-
-    </div>
-
 
     <!-- =========================
          TITULO OFERTAS
@@ -621,35 +611,29 @@
          *
          * También podés colocar los precios.
          */
-
+        
         const OFERTAS = {
 
-            1: {
-                precioAnterior: "$10.000",
-                precioOferta: "$7.999"
-            },
+    1: {
+        nombre: "Masitas Diversión",
 
-            5: {
-                precioAnterior: "$15.000",
-                precioOferta: "$11.999"
+        promociones: [
+            {
+                cantidad: 7,
+                descuento: "5% OFF"
             },
-
-            8: {
-                precioAnterior: "$20.000",
-                precioOferta: "$15.999"
+            {
+                cantidad: 14,
+                descuento: "8% OFF"
             },
-
-            12: {
-                precioAnterior: "$12.000",
-                precioOferta: "$9.999"
-            },
-
-            20: {
-                precioAnterior: "$25.000",
-                precioOferta: "$19.999"
+            {
+                cantidad: 21,
+                descuento: "15% OFF"
             }
+        ]
+    }
 
-        };
+};
 
 
         /* =========================
