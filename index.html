@@ -2,10 +2,15 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Catálogo de productos</title>
+
 
     <style>
 
@@ -15,11 +20,13 @@
             padding: 0;
         }
 
+
         body {
             font-family: Arial, sans-serif;
             background: #f3f3f3;
             color: #222;
         }
+
 
         /* =========================
            ENCABEZADO
@@ -32,10 +39,12 @@
             padding: 25px 15px;
         }
 
+
         header h1 {
             font-size: 32px;
             margin-bottom: 8px;
         }
+
 
         header p {
             font-size: 16px;
@@ -50,13 +59,16 @@
             display: flex;
             justify-content: center;
             gap: 12px;
-            padding: 20px 15px 10px;
+            padding: 20px 15px;
             flex-wrap: wrap;
         }
 
+
         .pestana {
             border: none;
+
             padding: 13px 25px;
+
             border-radius: 30px;
 
             background: white;
@@ -68,14 +80,17 @@
             cursor: pointer;
 
             box-shadow:
-                0 3px 10px rgba(0, 0, 0, 0.12);
+                0 3px 10px
+                rgba(0,0,0,.12);
 
-            transition: 0.25s;
+            transition: .25s;
         }
+
 
         .pestana:hover {
             transform: translateY(-2px);
         }
+
 
         .pestana.activa {
             background: #d71920;
@@ -92,15 +107,17 @@
                 linear-gradient(
                     135deg,
                     #ffcc00,
-                    #ff7b00
+                    #ff6a00
                 );
 
             color: #8b0000;
 
             border: 2px solid white;
 
-            animation: pulsar 1.5s infinite;
+            animation:
+                pulsar 1.5s infinite;
         }
+
 
         .pestana.ofertas.activa {
             background:
@@ -118,26 +135,14 @@
 
             0% {
                 transform: scale(1);
-
-                box-shadow:
-                    0 3px 10px
-                    rgba(255, 140, 0, 0.3);
             }
 
             50% {
                 transform: scale(1.05);
-
-                box-shadow:
-                    0 5px 25px
-                    rgba(255, 80, 0, 0.65);
             }
 
             100% {
                 transform: scale(1);
-
-                box-shadow:
-                    0 3px 10px
-                    rgba(255, 140, 0, 0.3);
             }
 
         }
@@ -149,16 +154,21 @@
 
         .buscador {
             max-width: 500px;
-            margin: 15px auto 25px;
+
+            margin: 0 auto 25px;
+
             padding: 0 15px;
         }
+
 
         .buscador input {
             width: 100%;
 
             padding: 14px 18px;
 
-            border: 1px solid #ddd;
+            border:
+                1px solid #ddd;
+
             border-radius: 30px;
 
             font-size: 16px;
@@ -166,71 +176,9 @@
             outline: none;
         }
 
+
         .buscador input:focus {
             border-color: #d71920;
-        }
-
-
-        /* =========================
-           TITULO OFERTAS
-        ========================= */
-
-        .titulo-ofertas {
-            display: none;
-
-            max-width: 1200px;
-
-            margin: 5px auto 20px;
-
-            padding: 0 15px;
-
-            text-align: center;
-        }
-
-        .titulo-ofertas h2 {
-            display: inline-block;
-
-            padding: 14px 25px;
-
-            border-radius: 15px;
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff0000,
-                    #ff9800
-                );
-
-            box-shadow:
-                0 5px 25px
-                rgba(255, 80, 0, 0.45);
-
-            animation: brillo 2s infinite;
-        }
-
-
-        @keyframes brillo {
-
-            0% {
-                box-shadow:
-                    0 5px 20px
-                    rgba(255, 80, 0, 0.3);
-            }
-
-            50% {
-                box-shadow:
-                    0 5px 35px
-                    rgba(255, 180, 0, 0.85);
-            }
-
-            100% {
-                box-shadow:
-                    0 5px 20px
-                    rgba(255, 80, 0, 0.3);
-            }
-
         }
 
 
@@ -239,14 +187,13 @@
         ========================= */
 
         .galeria {
+
             max-width: 1200px;
 
-            margin: 0 auto;
+            margin: auto;
 
             padding:
-                10px
-                15px
-                50px;
+                10px 15px 50px;
 
             display: grid;
 
@@ -257,11 +204,8 @@
         }
 
 
-        /* =========================
-           PRODUCTO
-        ========================= */
-
         .producto {
+
             position: relative;
 
             background: white;
@@ -274,24 +218,27 @@
 
             box-shadow:
                 0 3px 10px
-                rgba(0, 0, 0, 0.10);
+                rgba(0,0,0,.10);
 
             transition:
-                transform 0.25s,
-                box-shadow 0.25s;
+                transform .25s,
+                box-shadow .25s;
         }
 
+
         .producto:hover {
+
             transform:
                 translateY(-5px);
 
             box-shadow:
                 0 8px 20px
-                rgba(0, 0, 0, 0.18);
+                rgba(0,0,0,.18);
         }
 
 
         .producto img {
+
             width: 100%;
 
             height: 230px;
@@ -307,10 +254,11 @@
 
 
         /* =========================
-           ETIQUETA OFERTA
+           CINTA OFERTA
         ========================= */
 
         .etiqueta-oferta {
+
             position: absolute;
 
             top: 12px;
@@ -327,17 +275,17 @@
 
             color: white;
 
-            padding: 8px 13px;
+            padding: 8px 12px;
 
             border-radius: 20px;
 
-            font-size: 13px;
+            font-size: 12px;
 
             font-weight: bold;
 
             box-shadow:
                 0 3px 8px
-                rgba(0, 0, 0, 0.25);
+                rgba(0,0,0,.3);
 
             animation:
                 oferta 1.3s infinite;
@@ -371,81 +319,94 @@
            INFORMACIÓN OFERTA
         ========================= */
 
-        .info-producto {
+        .info-oferta {
+
             padding: 15px;
 
             text-align: center;
         }
 
 
-        .nombre-producto {
-            font-size: 20px;
+        .nombre-oferta {
+
+            font-size: 19px;
 
             font-weight: bold;
 
             color: #333;
 
-            margin-bottom: 13px;
-        }
-
-
-        .promociones {
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 8px;
+            margin-bottom: 12px;
         }
 
 
         .promocion {
+
             background:
-                linear-gradient(
-                    135deg,
-                    #fff3cd,
-                    #ffffff
-                );
+                #fff4d6;
 
             border:
                 2px solid #ff9800;
 
-            border-radius: 10px;
+            border-radius: 9px;
 
-            padding: 10px 7px;
+            padding: 9px;
 
-            font-size: 15px;
+            margin-top: 7px;
 
             font-weight: bold;
 
             color: #d71920;
-
-            box-shadow:
-                0 2px 6px
-                rgba(255, 120, 0, 0.15);
-        }
-
-
-        .promocion strong {
-            color: #111;
-        }
-
-
-        .llamada-oferta {
-            margin-top: 12px;
-
-            color: #ff6500;
-
-            font-size: 13px;
-
-            font-weight: bold;
         }
 
 
         /* =========================
-           VISOR GRANDE
+           MENSAJE DE CARGA
+        ========================= */
+
+        .cargando {
+
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 50px;
+
+            font-size: 20px;
+
+            color: #777;
+        }
+
+
+        /* =========================
+           ERROR
+        ========================= */
+
+        .error-ofertas {
+
+            grid-column: 1 / -1;
+
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            color: #d71920;
+
+            box-shadow:
+                0 3px 10px
+                rgba(0,0,0,.1);
+        }
+
+
+        /* =========================
+           VISOR
         ========================= */
 
         .visor {
+
             display: none;
 
             position: fixed;
@@ -459,24 +420,22 @@
             height: 100%;
 
             background:
-                rgba(0, 0, 0, 0.92);
+                rgba(0,0,0,.92);
 
             align-items: center;
+
             justify-content: center;
         }
 
 
         .visor img {
+
             max-width: 90%;
             max-height: 90%;
 
             object-fit: contain;
 
             border-radius: 8px;
-
-            box-shadow:
-                0 0 30px
-                rgba(0, 0, 0, 0.5);
         }
 
 
@@ -485,6 +444,7 @@
         ========================= */
 
         .cerrar {
+
             position: absolute;
 
             top: 20px;
@@ -501,17 +461,19 @@
             z-index: 10001;
         }
 
+
         .cerrar:hover {
             color: #ff4444;
         }
 
 
         /* =========================
-           ANTERIOR / SIGUIENTE
+           BOTONES VISOR
         ========================= */
 
         .anterior,
         .siguiente {
+
             position: absolute;
 
             top: 50%;
@@ -522,7 +484,7 @@
             border: none;
 
             background:
-                rgba(255, 255, 255, 0.2);
+                rgba(255,255,255,.2);
 
             color: white;
 
@@ -534,16 +496,6 @@
             cursor: pointer;
 
             border-radius: 8px;
-
-            transition:
-                background 0.2s;
-        }
-
-
-        .anterior:hover,
-        .siguiente:hover {
-            background:
-                rgba(255, 255, 255, 0.4);
         }
 
 
@@ -551,8 +503,17 @@
             left: 20px;
         }
 
+
         .siguiente {
             right: 20px;
+        }
+
+
+        .anterior:hover,
+        .siguiente:hover {
+
+            background:
+                rgba(255,255,255,.4);
         }
 
 
@@ -561,6 +522,7 @@
         ========================= */
 
         .numero {
+
             position: absolute;
 
             bottom: 20px;
@@ -573,30 +535,11 @@
             color: white;
 
             background:
-                rgba(0, 0, 0, 0.5);
+                rgba(0,0,0,.5);
 
             padding: 8px 15px;
 
             border-radius: 20px;
-
-            font-size: 15px;
-        }
-
-
-        /* =========================
-           SIN RESULTADOS
-        ========================= */
-
-        .sin-resultados {
-            grid-column: 1 / -1;
-
-            text-align: center;
-
-            padding: 50px;
-
-            color: #777;
-
-            font-size: 18px;
         }
 
 
@@ -608,7 +551,7 @@
 
             .galeria {
                 grid-template-columns:
-                    repeat(3, 1fr);
+                    repeat(3,1fr);
             }
 
         }
@@ -620,40 +563,45 @@
                 font-size: 26px;
             }
 
+
             .pestana {
-                padding: 11px 17px;
+
+                padding:
+                    11px 16px;
+
                 font-size: 14px;
             }
 
+
             .galeria {
+
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2,1fr);
 
                 gap: 12px;
             }
+
 
             .producto img {
                 height: 180px;
             }
 
-            .nombre-producto {
-                font-size: 17px;
-            }
-
-            .promocion {
-                font-size: 13px;
-            }
 
             .anterior,
             .siguiente {
+
                 width: 45px;
+
                 height: 60px;
+
                 font-size: 28px;
             }
+
 
             .anterior {
                 left: 8px;
             }
+
 
             .siguiente {
                 right: 8px;
@@ -668,18 +616,10 @@
                 height: 150px;
             }
 
-            .pestanas {
-                gap: 7px;
-            }
-
-            .pestana {
-                padding: 10px 12px;
-                font-size: 13px;
-            }
-
         }
 
     </style>
+
 </head>
 
 
@@ -724,7 +664,7 @@
             id="btnOfertas"
             onclick="mostrarOfertas()">
 
-            🔥 OFERTAS DEL DÍA 🔥
+            🔥 OFERTAS DE LA SEMANA 🔥
 
         </button>
 
@@ -740,23 +680,8 @@
         <input
             type="text"
             id="buscar"
-            placeholder="🔍 Buscar producto por número..."
-            oninput="buscar()">
-
-    </div>
-
-
-    <!-- =========================
-         TITULO OFERTAS
-    ========================= -->
-
-    <div
-        class="titulo-ofertas"
-        id="tituloOfertas">
-
-        <h2>
-            🔥 ¡OFERTAS DEL DÍA! 🔥
-        </h2>
+            placeholder="🔍 Buscar producto..."
+            oninput="buscarProducto()">
 
     </div>
 
@@ -768,6 +693,7 @@
     <div
         class="galeria"
         id="galeria">
+
     </div>
 
 
@@ -782,8 +708,7 @@
 
         <span
             class="cerrar"
-            onclick="cerrarVisor()"
-            aria-label="Cerrar">
+            onclick="cerrarVisor()">
 
             &times;
 
@@ -792,8 +717,7 @@
 
         <button
             class="anterior"
-            onclick="imagenAnterior()"
-            aria-label="Imagen anterior">
+            onclick="imagenAnterior()">
 
             &#10094;
 
@@ -808,8 +732,7 @@
 
         <button
             class="siguiente"
-            onclick="imagenSiguiente()"
-            aria-label="Imagen siguiente">
+            onclick="imagenSiguiente()">
 
             &#10095;
 
@@ -837,57 +760,13 @@
         const TOTAL_IMAGENES = 52;
 
 
-        /*
-         * ==========================================
-         * OFERTA: MASITAS DIVERSIÓN
-         * ==========================================
-         *
-         * IMPORTANTE:
-         *
-         * El número 1 significa que Masitas
-         * Diversión está en la imagen 1.png.
-         *
-         * Si está en otra imagen, por ejemplo
-         * 18.png, cambiá:
-         *
-         *     1:
-         *
-         * por:
-         *
-         *     18:
-         *
-         */
+        let imagenActual = 1;
 
 
-        const OFERTAS = {
+        let modoOfertas = false;
 
-            45: {
 
-                nombre:
-                    "🍪 Masitas Diversión",
-
-                promociones: [
-
-                    {
-                        cantidad: 7,
-                        descuento: "5% OFF"
-                    },
-
-                    {
-                        cantidad: 14,
-                        descuento: "8% OFF"
-                    },
-
-                    {
-                        cantidad: 21,
-                        descuento: "15% OFF"
-                    }
-
-                ]
-
-            }
-
-        };
+        let ofertasCargadas = [];
 
 
         /* =========================
@@ -924,12 +803,6 @@
             );
 
 
-        const tituloOfertas =
-            document.getElementById(
-                "tituloOfertas"
-            );
-
-
         const btnTodos =
             document.getElementById(
                 "btnTodos"
@@ -943,16 +816,30 @@
 
 
         /* =========================
-           VARIABLES
+           MOSTRAR TODOS
         ========================= */
 
-        let imagenActual = 1;
+        function mostrarTodos() {
 
-        let modoOfertas = false;
+            modoOfertas = false;
+
+            buscador.value = "";
+
+            btnTodos.classList.add(
+                "activa"
+            );
+
+            btnOfertas.classList.remove(
+                "activa"
+            );
+
+            mostrarImagenes();
+
+        }
 
 
         /* =========================
-           CREAR GALERÍA
+           MOSTRAR PRODUCTOS
         ========================= */
 
         function mostrarImagenes() {
@@ -965,7 +852,6 @@
                 i <= TOTAL_IMAGENES;
                 i++
             ) {
-
 
                 const producto =
                     document.createElement(
@@ -981,11 +867,7 @@
                     i;
 
 
-                const oferta =
-                    OFERTAS[i];
-
-
-                let contenido = `
+                producto.innerHTML = `
 
                     <img
                         src="${i}.png"
@@ -996,100 +878,6 @@
                 `;
 
 
-                /* =========================
-                   SI ES OFERTA
-                ========================= */
-
-                if (oferta) {
-
-
-                    let promocionesHTML =
-                        "";
-
-
-                    oferta.promociones
-                        .forEach(
-                            promocion => {
-
-
-                                promocionesHTML += `
-
-                                    <div
-                                        class="promocion">
-
-                                        🔥 Llevando
-
-                                        <strong>
-                                            ${promocion.cantidad}
-                                        </strong>
-
-                                        →
-
-                                        <strong>
-                                            ${promocion.descuento}
-                                        </strong>
-
-                                    </div>
-
-                                `;
-
-                            }
-                        );
-
-
-                    contenido += `
-
-                        <div
-                            class="etiqueta-oferta">
-
-                            🔥 OFERTA
-
-                        </div>
-
-
-                        <div
-                            class="info-producto">
-
-
-                            <div
-                                class="nombre-producto">
-
-                                ${oferta.nombre}
-
-                            </div>
-
-
-                            <div
-                                class="promociones">
-
-                                ${promocionesHTML}
-
-                            </div>
-
-
-                            <div
-                                class="llamada-oferta">
-
-                                💥 ¡Aprovechá esta promoción!
-
-                            </div>
-
-
-                        </div>
-
-                    `;
-
-                }
-
-
-                producto.innerHTML =
-                    contenido;
-
-
-                /* =========================
-                   ABRIR VISOR
-                ========================= */
-
                 producto.onclick =
                     function() {
 
@@ -1097,10 +885,6 @@
 
                     };
 
-
-                /* =========================
-                   IMAGEN NO EXISTE
-                ========================= */
 
                 const imagen =
                     producto.querySelector(
@@ -1127,87 +911,324 @@
 
 
         /* =========================
-           MOSTRAR TODOS
+           CARGAR OFERTAS.TXT
         ========================= */
 
-        function mostrarTodos() {
-
-            modoOfertas = false;
-
-
-            buscador.value = "";
-
-
-            tituloOfertas.style.display =
-                "none";
-
-
-            btnTodos.classList.add(
-                "activa"
-            );
-
-
-            btnOfertas.classList.remove(
-                "activa"
-            );
-
-
-            mostrarImagenes();
-
-        }
-
-
-        /* =========================
-           MOSTRAR OFERTAS
-        ========================= */
-
-        function mostrarOfertas() {
+        async function mostrarOfertas() {
 
             modoOfertas = true;
 
-
             buscador.value = "";
-
-
-            tituloOfertas.style.display =
-                "block";
-
 
             btnTodos.classList.remove(
                 "activa"
             );
-
 
             btnOfertas.classList.add(
                 "activa"
             );
 
 
-            mostrarImagenes();
+            galeria.innerHTML = `
+
+                <div class="cargando">
+
+                    ⏳ Cargando ofertas...
+
+                </div>
+
+            `;
 
 
-            const productos =
-                document.querySelectorAll(
-                    ".producto"
-                );
+            try {
+
+                const respuesta =
+                    await fetch(
+                        "ofertas.txt?actualizado=" +
+                        Date.now()
+                    );
 
 
-            productos.forEach(
-                producto => {
+                if (!respuesta.ok) {
+
+                    throw new Error(
+                        "No se pudo abrir ofertas.txt"
+                    );
+
+                }
 
 
-                    const numero =
-                        producto.dataset.numero;
+                const texto =
+                    await respuesta.text();
 
 
-                    if (
-                        !OFERTAS[numero]
-                    ) {
+                ofertasCargadas =
+                    procesarOfertas(texto);
 
-                        producto.style.display =
-                            "none";
 
-                    }
+                mostrarTarjetasOfertas();
+
+
+            } catch (error) {
+
+                galeria.innerHTML = `
+
+                    <div class="error-ofertas">
+
+                        <h2>
+                            ⚠️ No se pudieron cargar
+                            las ofertas
+                        </h2>
+
+                        <br>
+
+                        <p>
+                            Verificá que el archivo
+                            <strong>ofertas.txt</strong>
+                            esté en la misma carpeta
+                            que el archivo HTML.
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /* =========================
+           PROCESAR TXT
+        ========================= */
+
+        function procesarOfertas(texto) {
+
+            const lineas =
+                texto.split("\n");
+
+
+            const ofertas = [];
+
+
+            lineas.forEach(linea => {
+
+                linea =
+                    linea.trim();
+
+
+                if (!linea) {
+                    return;
+                }
+
+
+                if (
+                    linea.startsWith("#")
+                ) {
+                    return;
+                }
+
+
+                const partes =
+                    linea.split("|");
+
+
+                if (
+                    partes.length < 3
+                ) {
+                    return;
+                }
+
+
+                const numero =
+                    partes[0].trim();
+
+
+                const nombre =
+                    partes[1].trim();
+
+
+                const promociones =
+                    partes
+                        .slice(2)
+                        .map(
+                            texto => texto.trim()
+                        )
+                        .filter(
+                            texto => texto
+                        );
+
+
+                ofertas.push({
+
+                    numero:
+                        numero,
+
+                    nombre:
+                        nombre,
+
+                    promociones:
+                        promociones
+
+                });
+
+            });
+
+
+            return ofertas;
+
+        }
+
+
+        /* =========================
+           CREAR TARJETAS DE OFERTA
+        ========================= */
+
+        function mostrarTarjetasOfertas() {
+
+            galeria.innerHTML = "";
+
+
+            if (
+                ofertasCargadas.length === 0
+            ) {
+
+                galeria.innerHTML = `
+
+                    <div class="error-ofertas">
+
+                        <h2>
+                            📋 No hay ofertas
+                        </h2>
+
+                        <p>
+                            Agregá las ofertas
+                            de esta semana
+                            en ofertas.txt
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            ofertasCargadas.forEach(
+                oferta => {
+
+
+                    const producto =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    producto.className =
+                        "producto";
+
+
+                    producto.dataset.numero =
+                        oferta.numero;
+
+
+                    let promocionesHTML =
+                        "";
+
+
+                    oferta.promociones
+                        .forEach(
+                            promocion => {
+
+                                promocionesHTML += `
+
+                                    <div
+                                        class="promocion">
+
+                                        🔥
+                                        ${escapeHTML(
+                                            promocion
+                                        )}
+
+                                    </div>
+
+                                `;
+
+                            }
+                        );
+
+
+                    producto.innerHTML = `
+
+                        <div
+                            class="etiqueta-oferta">
+
+                            🔥 ¡ESTÁ EN OFERTA! 🔥
+
+                        </div>
+
+
+                        <img
+                            src="${oferta.numero}.png"
+                            alt="${escapeHTML(
+                                oferta.nombre
+                            )}"
+                            loading="lazy"
+                        >
+
+
+                        <div
+                            class="info-oferta">
+
+                            <div
+                                class="nombre-oferta">
+
+                                ${escapeHTML(
+                                    oferta.nombre
+                                )}
+
+                            </div>
+
+
+                            ${promocionesHTML}
+
+                        </div>
+
+                    `;
+
+
+                    producto.onclick =
+                        function() {
+
+                            abrirVisor(
+                                Number(
+                                    oferta.numero
+                                )
+                            );
+
+                        };
+
+
+                    const imagen =
+                        producto.querySelector(
+                            "img"
+                        );
+
+
+                    imagen.onerror =
+                        function() {
+
+                            producto.style.display =
+                                "none";
+
+                        };
+
+
+                    galeria.appendChild(
+                        producto
+                    );
 
                 }
             );
@@ -1219,12 +1240,47 @@
            BUSCADOR
         ========================= */
 
-        function buscar() {
+        function buscarProducto() {
 
             const texto =
                 buscador.value
                     .toLowerCase()
                     .trim();
+
+
+            if (modoOfertas) {
+
+                const filtradas =
+                    ofertasCargadas.filter(
+                        oferta =>
+
+                            oferta.numero
+                                .toLowerCase()
+                                .includes(texto)
+
+                            ||
+
+                            oferta.nombre
+                                .toLowerCase()
+                                .includes(texto)
+
+                            ||
+
+                            oferta.promociones
+                                .join(" ")
+                                .toLowerCase()
+                                .includes(texto)
+                    );
+
+
+                mostrarOfertasFiltradas(
+                    filtradas
+                );
+
+
+                return;
+
+            }
 
 
             const productos =
@@ -1233,38 +1289,12 @@
                 );
 
 
-            let encontrados = 0;
-
-
             productos.forEach(
                 producto => {
-
 
                     const numero =
                         producto.dataset.numero;
 
-
-                    /*
-                     * En la pestaña de ofertas
-                     * solo mostramos las ofertas.
-                     */
-
-                    if (
-                        modoOfertas &&
-                        !OFERTAS[numero]
-                    ) {
-
-                        producto.style.display =
-                            "none";
-
-                        return;
-
-                    }
-
-
-                    /*
-                     * Buscar por número
-                     */
 
                     if (
                         numero.includes(texto)
@@ -1272,8 +1302,6 @@
 
                         producto.style.display =
                             "block";
-
-                        encontrados++;
 
                     } else {
 
@@ -1285,66 +1313,136 @@
                 }
             );
 
-
-            /* =========================
-               MENSAJE SIN RESULTADOS
-            ========================= */
-
-            let mensaje =
-                document.getElementById(
-                    "sinResultados"
-                );
+        }
 
 
-            if (
-                encontrados === 0
-            ) {
+        /* =========================
+           OFERTAS FILTRADAS
+        ========================= */
+
+        function mostrarOfertasFiltradas(
+            ofertas
+        ) {
+
+            galeria.innerHTML = "";
 
 
-                if (!mensaje) {
+            ofertas.forEach(
+                oferta => {
 
-
-                    mensaje =
+                    const producto =
                         document.createElement(
                             "div"
                         );
 
 
-                    mensaje.id =
-                        "sinResultados";
+                    producto.className =
+                        "producto";
 
 
-                    mensaje.className =
-                        "sin-resultados";
+                    let promocionesHTML =
+                        "";
 
 
-                    mensaje.textContent =
-                        "No se encontró ningún producto.";
+                    oferta.promociones
+                        .forEach(
+                            promocion => {
+
+                                promocionesHTML += `
+
+                                    <div
+                                        class="promocion">
+
+                                        🔥
+                                        ${escapeHTML(
+                                            promocion
+                                        )}
+
+                                    </div>
+
+                                `;
+
+                            }
+                        );
+
+
+                    producto.innerHTML = `
+
+                        <div
+                            class="etiqueta-oferta">
+
+                            🔥 ¡ESTÁ EN OFERTA! 🔥
+
+                        </div>
+
+
+                        <img
+                            src="${oferta.numero}.png"
+                            alt="${escapeHTML(
+                                oferta.nombre
+                            )}"
+                        >
+
+
+                        <div
+                            class="info-oferta">
+
+                            <div
+                                class="nombre-oferta">
+
+                                ${escapeHTML(
+                                    oferta.nombre
+                                )}
+
+                            </div>
+
+                            ${promocionesHTML}
+
+                        </div>
+
+                    `;
+
+
+                    producto.onclick =
+                        function() {
+
+                            abrirVisor(
+                                Number(
+                                    oferta.numero
+                                )
+                            );
+
+                        };
 
 
                     galeria.appendChild(
-                        mensaje
+                        producto
                     );
 
                 }
-
-
-            } else {
-
-
-                if (mensaje) {
-
-                    mensaje.remove();
-
-                }
-
-            }
+            );
 
         }
 
 
         /* =========================
-           ABRIR VISOR
+           SEGURIDAD HTML
+        ========================= */
+
+        function escapeHTML(texto) {
+
+            return texto
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        /* =========================
+           VISOR
         ========================= */
 
         function abrirVisor(numero) {
@@ -1366,15 +1464,10 @@
         }
 
 
-        /* =========================
-           ACTUALIZAR VISOR
-        ========================= */
-
         function actualizarVisor() {
 
             imagenGrande.src =
-                imagenActual +
-                ".png";
+                imagenActual + ".png";
 
 
             imagenGrande.alt =
@@ -1390,10 +1483,6 @@
         }
 
 
-        /* =========================
-           CERRAR VISOR
-        ========================= */
-
         function cerrarVisor() {
 
             visor.style.display =
@@ -1407,7 +1496,7 @@
 
 
         /* =========================
-           IMAGEN ANTERIOR
+           ANTERIOR
         ========================= */
 
         function imagenAnterior() {
@@ -1431,7 +1520,7 @@
 
 
         /* =========================
-           IMAGEN SIGUIENTE
+           SIGUIENTE
         ========================= */
 
         function imagenSiguiente() {
@@ -1444,8 +1533,7 @@
                 TOTAL_IMAGENES
             ) {
 
-                imagenActual =
-                    1;
+                imagenActual = 1;
 
             }
 
@@ -1456,13 +1544,12 @@
 
 
         /* =========================
-           CERRAR AL HACER CLICK AFUERA
+           CLICK AFUERA
         ========================= */
 
         visor.addEventListener(
             "click",
             function(event) {
-
 
                 if (
                     event.target === visor
@@ -1484,12 +1571,18 @@
             "keydown",
             function(event) {
 
+                if (
+                    visor.style.display !==
+                    "flex"
+                ) {
 
-                /* ESC */
+                    return;
+
+                }
+
 
                 if (
-                    event.key === "Escape" &&
-                    visor.style.display === "flex"
+                    event.key === "Escape"
                 ) {
 
                     cerrarVisor();
@@ -1497,11 +1590,8 @@
                 }
 
 
-                /* IZQUIERDA */
-
                 if (
-                    event.key === "ArrowLeft" &&
-                    visor.style.display === "flex"
+                    event.key === "ArrowLeft"
                 ) {
 
                     imagenAnterior();
@@ -1509,11 +1599,8 @@
                 }
 
 
-                /* DERECHA */
-
                 if (
-                    event.key === "ArrowRight" &&
-                    visor.style.display === "flex"
+                    event.key === "ArrowRight"
                 ) {
 
                     imagenSiguiente();
@@ -1525,10 +1612,10 @@
 
 
         /* =========================
-           CARGAR GALERÍA
+           INICIAR
         ========================= */
 
-        mostrarImagenes();
+        mostrarTodos();
 
     </script>
 
