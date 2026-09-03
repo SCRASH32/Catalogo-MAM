@@ -735,7 +735,15 @@
          BUSCADOR
     ========================= -->
 
+    <div class="buscador">
 
+        <input
+            type="text"
+            id="buscar"
+            placeholder="🔎 Buscar producto por número..."
+            oninput="buscar()">
+
+    </div>
 
 
     <!-- =========================
@@ -821,7 +829,6 @@
 
     <script>
 
-
         /* =========================
            CONFIGURACIÓN
         ========================= */
@@ -829,29 +836,36 @@
         const TOTAL_IMAGENES = 52;
 
 
-        /*
-         * ==========================================
-         * OFERTA: MASITAS DIVERSIÓN
-         * ==========================================
-         *
-         * IMPORTANTE:
-         *
-         * El número 1 significa que Masitas
-         * Diversión está en la imagen 1.png.
-         *
-         * Si está en otra imagen, por ejemplo
-         * 18.png, cambiá:
-         *
-         *     1:
-         *
-         * por:
-         *
-         *     18:
-         *
-         */
+        /* =========================
+           OFERTAS
+        =========================
+        
+        Para agregar otra oferta,
+        simplemente agregala dentro
+        de este mismo objeto.
 
+        El número corresponde al
+        nombre de la imagen.
+
+        Ejemplo:
+
+        10: {
+            nombre: "Producto",
+            promociones: [
+                {
+                    cantidad: 5,
+                    descuento: "10% OFF"
+                }
+            ]
+        }
+
+        ========================= */
 
         const OFERTAS = {
+
+            /* =====================
+               OFERTA IMAGEN 45
+            ===================== */
 
             45: {
 
@@ -877,43 +891,47 @@
 
                 ]
 
-            }
+            },
 
-        };
-        const OFERTAS = {
+
+            /* =====================
+               OFERTA IMAGEN 37
+            ===================== */
 
             37: {
 
                 nombre:
-                    "ALF-- BAGLEY--ARCOR--AGUILA",
+                    "ALF -- BAGLEY -- ARCOR -- AGUILA",
 
                 promociones: [
 
                     {
                         cantidad: 6,
-                        descuento: "1 ALF rasta triple sin cargo"
-                    },
-
+                        descuento:
+                            "1 ALF Rasta Triple sin cargo"
+                    }
 
                 ]
 
-            }
+            },
 
-        };
-        const OFERTAS = {
+
+            /* =====================
+               OFERTA IMAGEN 29
+            ===================== */
 
             29: {
 
                 nombre:
-                    "ALF-- rasta triple",
+                    "ALF -- Rasta Triple",
 
                 promociones: [
 
                     {
                         cantidad: 7,
-                        descuento: "1 sin cargo"
-                    },
-
+                        descuento:
+                            "1 sin cargo"
+                    }
 
                 ]
 
@@ -998,7 +1016,6 @@
                 i++
             ) {
 
-
                 const producto =
                     document.createElement(
                         "div"
@@ -1034,39 +1051,36 @@
 
                 if (oferta) {
 
-
                     let promocionesHTML =
                         "";
 
 
-                    oferta.promociones
-                        .forEach(
-                            promocion => {
+                    oferta.promociones.forEach(
+                        promocion => {
 
+                            promocionesHTML += `
 
-                                promocionesHTML += `
+                                <div
+                                    class="promocion">
 
-                                    <div
-                                        class="promocion">
+                                    🔥 Llevando
 
-                                        🔥 Llevando
+                                    <strong>
+                                        ${promocion.cantidad}
+                                    </strong>
 
-                                        <strong>
-                                            ${promocion.cantidad}
-                                        </strong>
+                                    →
 
-                                        →
+                                    <strong>
+                                        ${promocion.descuento}
+                                    </strong>
 
-                                        <strong>
-                                            ${promocion.descuento}
-                                        </strong>
+                                </div>
 
-                                    </div>
+                            `;
 
-                                `;
-
-                            }
-                        );
+                        }
+                    );
 
 
                     contenido += `
@@ -1227,7 +1241,6 @@
             productos.forEach(
                 producto => {
 
-
                     const numero =
                         producto.dataset.numero;
 
@@ -1271,15 +1284,12 @@
             productos.forEach(
                 producto => {
 
-
                     const numero =
                         producto.dataset.numero;
 
 
-                    /*
-                     * En la pestaña de ofertas
-                     * solo mostramos las ofertas.
-                     */
+                    /* En ofertas solo
+                       mostramos ofertas */
 
                     if (
                         modoOfertas &&
@@ -1294,9 +1304,7 @@
                     }
 
 
-                    /*
-                     * Buscar por número
-                     */
+                    /* Buscar por número */
 
                     if (
                         numero.includes(texto)
@@ -1332,9 +1340,7 @@
                 encontrados === 0
             ) {
 
-
                 if (!mensaje) {
-
 
                     mensaje =
                         document.createElement(
@@ -1360,9 +1366,7 @@
 
                 }
 
-
             } else {
-
 
                 if (mensaje) {
 
@@ -1495,7 +1499,6 @@
             "click",
             function(event) {
 
-
                 if (
                     event.target === visor
                 ) {
@@ -1515,7 +1518,6 @@
         document.addEventListener(
             "keydown",
             function(event) {
-
 
                 /* ESC */
 
