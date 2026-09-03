@@ -8,6 +8,7 @@
     <title>Catálogo de productos</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -40,6 +41,7 @@
             font-size: 16px;
         }
 
+
         /* =========================
            PESTAÑAS
         ========================= */
@@ -56,12 +58,18 @@
             border: none;
             padding: 13px 25px;
             border-radius: 30px;
+
             background: white;
             color: #333;
+
             font-size: 16px;
             font-weight: bold;
+
             cursor: pointer;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+
+            box-shadow:
+                0 3px 10px rgba(0, 0, 0, 0.12);
+
             transition: 0.25s;
         }
 
@@ -74,36 +82,66 @@
             color: white;
         }
 
-        /* OFERTAS */
+
+        /* =========================
+           BOTÓN OFERTAS
+        ========================= */
 
         .pestana.ofertas {
-            background: linear-gradient(135deg, #ffcc00, #ff7b00);
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffcc00,
+                    #ff7b00
+                );
+
             color: #8b0000;
+
+            border: 2px solid white;
+
             animation: pulsar 1.5s infinite;
-            border: 2px solid #fff;
         }
 
         .pestana.ofertas.activa {
-            background: linear-gradient(135deg, #ff3d00, #ffcc00);
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff0000,
+                    #ff9800
+                );
+
             color: white;
         }
 
+
         @keyframes pulsar {
+
             0% {
                 transform: scale(1);
-                box-shadow: 0 3px 10px rgba(255, 140, 0, 0.3);
+
+                box-shadow:
+                    0 3px 10px
+                    rgba(255, 140, 0, 0.3);
             }
 
             50% {
                 transform: scale(1.05);
-                box-shadow: 0 5px 20px rgba(255, 80, 0, 0.55);
+
+                box-shadow:
+                    0 5px 25px
+                    rgba(255, 80, 0, 0.65);
             }
 
             100% {
                 transform: scale(1);
-                box-shadow: 0 3px 10px rgba(255, 140, 0, 0.3);
+
+                box-shadow:
+                    0 3px 10px
+                    rgba(255, 140, 0, 0.3);
             }
+
         }
+
 
         /* =========================
            BUSCADOR
@@ -117,10 +155,14 @@
 
         .buscador input {
             width: 100%;
+
             padding: 14px 18px;
+
             border: 1px solid #ddd;
             border-radius: 30px;
+
             font-size: 16px;
+
             outline: none;
         }
 
@@ -128,41 +170,69 @@
             border-color: #d71920;
         }
 
+
         /* =========================
            TITULO OFERTAS
         ========================= */
 
         .titulo-ofertas {
             display: none;
+
             max-width: 1200px;
-            margin: 5px auto 15px;
+
+            margin: 5px auto 20px;
+
             padding: 0 15px;
+
             text-align: center;
         }
 
         .titulo-ofertas h2 {
             display: inline-block;
-            padding: 12px 25px;
-            border-radius: 12px;
+
+            padding: 14px 25px;
+
+            border-radius: 15px;
+
             color: white;
-            background: linear-gradient(135deg, #ff1e00, #ff9800);
-            box-shadow: 0 5px 20px rgba(255, 80, 0, 0.35);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff0000,
+                    #ff9800
+                );
+
+            box-shadow:
+                0 5px 25px
+                rgba(255, 80, 0, 0.45);
+
             animation: brillo 2s infinite;
         }
 
+
         @keyframes brillo {
+
             0% {
-                box-shadow: 0 5px 20px rgba(255, 80, 0, 0.3);
+                box-shadow:
+                    0 5px 20px
+                    rgba(255, 80, 0, 0.3);
             }
 
             50% {
-                box-shadow: 0 5px 30px rgba(255, 170, 0, 0.8);
+                box-shadow:
+                    0 5px 35px
+                    rgba(255, 180, 0, 0.85);
             }
 
             100% {
-                box-shadow: 0 5px 20px rgba(255, 80, 0, 0.3);
+                box-shadow:
+                    0 5px 20px
+                    rgba(255, 80, 0, 0.3);
             }
+
         }
+
 
         /* =========================
            GALERÍA
@@ -170,39 +240,71 @@
 
         .galeria {
             max-width: 1200px;
+
             margin: 0 auto;
-            padding: 10px 15px 50px;
+
+            padding:
+                10px
+                15px
+                50px;
 
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 20px;
         }
 
+
+        /* =========================
+           PRODUCTO
+        ========================= */
+
         .producto {
             position: relative;
+
             background: white;
+
             border-radius: 12px;
+
             overflow: hidden;
+
             cursor: pointer;
 
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+            box-shadow:
+                0 3px 10px
+                rgba(0, 0, 0, 0.10);
 
-            transition: transform 0.25s, box-shadow 0.25s;
+            transition:
+                transform 0.25s,
+                box-shadow 0.25s;
         }
 
         .producto:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(0, 0, 0, 0.18);
         }
+
 
         .producto img {
             width: 100%;
+
             height: 230px;
+
             display: block;
+
             object-fit: contain;
+
             padding: 10px;
+
             background: white;
         }
+
 
         /* =========================
            ETIQUETA OFERTA
@@ -210,66 +312,134 @@
 
         .etiqueta-oferta {
             position: absolute;
+
             top: 12px;
             left: 12px;
+
             z-index: 2;
 
-            background: linear-gradient(135deg, #ff0000, #ff7200);
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff0000,
+                    #ff7200
+                );
+
             color: white;
 
-            padding: 7px 12px;
+            padding: 8px 13px;
+
             border-radius: 20px;
 
             font-size: 13px;
+
             font-weight: bold;
 
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+            box-shadow:
+                0 3px 8px
+                rgba(0, 0, 0, 0.25);
 
-            animation: oferta 1.3s infinite;
+            animation:
+                oferta 1.3s infinite;
         }
 
+
         @keyframes oferta {
+
             0% {
-                transform: rotate(-3deg) scale(1);
+                transform:
+                    rotate(-3deg)
+                    scale(1);
             }
 
             50% {
-                transform: rotate(3deg) scale(1.08);
+                transform:
+                    rotate(3deg)
+                    scale(1.08);
             }
 
             100% {
-                transform: rotate(-3deg) scale(1);
+                transform:
+                    rotate(-3deg)
+                    scale(1);
             }
+
         }
 
+
         /* =========================
-           INFORMACIÓN DEL PRODUCTO
+           INFORMACIÓN OFERTA
         ========================= */
 
         .info-producto {
-            padding: 12px;
+            padding: 15px;
+
             text-align: center;
         }
 
-        .precio-anterior {
-            color: #888;
-            text-decoration: line-through;
-            font-size: 14px;
-            margin-bottom: 4px;
+
+        .nombre-producto {
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #333;
+
+            margin-bottom: 13px;
         }
 
-        .precio-oferta {
+
+        .promociones {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+
+        .promocion {
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff3cd,
+                    #ffffff
+                );
+
+            border:
+                2px solid #ff9800;
+
+            border-radius: 10px;
+
+            padding: 10px 7px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
             color: #d71920;
-            font-size: 23px;
+
+            box-shadow:
+                0 2px 6px
+                rgba(255, 120, 0, 0.15);
+        }
+
+
+        .promocion strong {
+            color: #111;
+        }
+
+
+        .llamada-oferta {
+            margin-top: 12px;
+
+            color: #ff6500;
+
+            font-size: 13px;
+
             font-weight: bold;
         }
 
-        .texto-oferta {
-            margin-top: 5px;
-            color: #ff6600;
-            font-size: 13px;
-            font-weight: bold;
-        }
 
         /* =========================
            VISOR GRANDE
@@ -279,6 +449,7 @@
             display: none;
 
             position: fixed;
+
             z-index: 9999;
 
             left: 0;
@@ -287,11 +458,13 @@
             width: 100%;
             height: 100%;
 
-            background: rgba(0, 0, 0, 0.92);
+            background:
+                rgba(0, 0, 0, 0.92);
 
             align-items: center;
             justify-content: center;
         }
+
 
         .visor img {
             max-width: 90%;
@@ -301,8 +474,11 @@
 
             border-radius: 8px;
 
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            box-shadow:
+                0 0 30px
+                rgba(0, 0, 0, 0.5);
         }
+
 
         /* =========================
            CERRAR
@@ -317,6 +493,7 @@
             color: white;
 
             font-size: 45px;
+
             font-weight: bold;
 
             cursor: pointer;
@@ -328,6 +505,7 @@
             color: #ff4444;
         }
 
+
         /* =========================
            ANTERIOR / SIGUIENTE
         ========================= */
@@ -337,11 +515,14 @@
             position: absolute;
 
             top: 50%;
-            transform: translateY(-50%);
+
+            transform:
+                translateY(-50%);
 
             border: none;
 
-            background: rgba(255, 255, 255, 0.2);
+            background:
+                rgba(255, 255, 255, 0.2);
 
             color: white;
 
@@ -354,13 +535,17 @@
 
             border-radius: 8px;
 
-            transition: background 0.2s;
+            transition:
+                background 0.2s;
         }
+
 
         .anterior:hover,
         .siguiente:hover {
-            background: rgba(255, 255, 255, 0.4);
+            background:
+                rgba(255, 255, 255, 0.4);
         }
+
 
         .anterior {
             left: 20px;
@@ -370,6 +555,7 @@
             right: 20px;
         }
 
+
         /* =========================
            NUMERO
         ========================= */
@@ -378,13 +564,16 @@
             position: absolute;
 
             bottom: 20px;
+
             left: 50%;
 
-            transform: translateX(-50%);
+            transform:
+                translateX(-50%);
 
             color: white;
 
-            background: rgba(0, 0, 0, 0.5);
+            background:
+                rgba(0, 0, 0, 0.5);
 
             padding: 8px 15px;
 
@@ -392,6 +581,7 @@
 
             font-size: 15px;
         }
+
 
         /* =========================
            SIN RESULTADOS
@@ -409,6 +599,7 @@
             font-size: 18px;
         }
 
+
         /* =========================
            RESPONSIVE
         ========================= */
@@ -416,10 +607,12 @@
         @media (max-width: 900px) {
 
             .galeria {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns:
+                    repeat(3, 1fr);
             }
 
         }
+
 
         @media (max-width: 650px) {
 
@@ -433,7 +626,9 @@
             }
 
             .galeria {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, 1fr);
+
                 gap: 12px;
             }
 
@@ -441,8 +636,12 @@
                 height: 180px;
             }
 
-            .precio-oferta {
-                font-size: 19px;
+            .nombre-producto {
+                font-size: 17px;
+            }
+
+            .promocion {
+                font-size: 13px;
             }
 
             .anterior,
@@ -462,6 +661,7 @@
 
         }
 
+
         @media (max-width: 400px) {
 
             .producto img {
@@ -478,18 +678,28 @@
             }
 
         }
+
     </style>
 </head>
 
+
 <body>
+
 
     <!-- =========================
          ENCABEZADO
     ========================= -->
 
     <header>
-        <h1>CATÁLOGO</h1>
-        <p>Todos nuestros productos</p>
+
+        <h1>
+            CATÁLOGO
+        </h1>
+
+        <p>
+            Todos nuestros productos
+        </p>
+
     </header>
 
 
@@ -503,14 +713,19 @@
             class="pestana activa"
             id="btnTodos"
             onclick="mostrarTodos()">
+
             🛍️ TODOS
+
         </button>
+
 
         <button
             class="pestana ofertas"
             id="btnOfertas"
             onclick="mostrarOfertas()">
+
             🔥 OFERTAS DEL DÍA 🔥
+
         </button>
 
     </div>
@@ -519,6 +734,16 @@
     <!-- =========================
          BUSCADOR
     ========================= -->
+
+    <div class="buscador">
+
+        <input
+            type="text"
+            id="buscar"
+            placeholder="🔍 Buscar producto por número..."
+            oninput="buscar()">
+
+    </div>
 
 
     <!-- =========================
@@ -529,7 +754,9 @@
         class="titulo-ofertas"
         id="tituloOfertas">
 
-        <h2>🔥 ¡OFERTAS DEL DÍA! 🔥</h2>
+        <h2>
+            🔥 ¡OFERTAS DEL DÍA! 🔥
+        </h2>
 
     </div>
 
@@ -552,42 +779,56 @@
         class="visor"
         id="visor">
 
+
         <span
             class="cerrar"
             onclick="cerrarVisor()"
             aria-label="Cerrar">
+
             &times;
+
         </span>
+
 
         <button
             class="anterior"
             onclick="imagenAnterior()"
             aria-label="Imagen anterior">
+
             &#10094;
+
         </button>
+
 
         <img
             id="imagenGrande"
             src=""
             alt="Producto">
 
+
         <button
             class="siguiente"
             onclick="imagenSiguiente()"
             aria-label="Imagen siguiente">
+
             &#10095;
+
         </button>
+
 
         <div
             class="numero"
             id="numeroImagen">
+
             1 / 52
+
         </div>
 
     </div>
 
 
     <script>
+
 
         /* =========================
            CONFIGURACIÓN
@@ -598,42 +839,55 @@
 
         /*
          * ==========================================
-         * PRODUCTOS EN OFERTA
+         * OFERTA: MASITAS DIVERSIÓN
          * ==========================================
          *
-         * Acá elegís qué productos son ofertas.
+         * IMPORTANTE:
          *
-         * Ejemplo:
+         * El número 1 significa que Masitas
+         * Diversión está en la imagen 1.png.
          *
-         * 1 = producto 1
-         * 5 = producto 5
-         * 12 = producto 12
+         * Si está en otra imagen, por ejemplo
+         * 18.png, cambiá:
          *
-         * También podés colocar los precios.
+         *     1:
+         *
+         * por:
+         *
+         *     18:
+         *
          */
-        
+
+
         const OFERTAS = {
 
-    1: {
-        nombre: "Masitas Diversión",
+            45: {
 
-        promociones: [
-            {
-                cantidad: 7,
-                descuento: "5% OFF"
-            },
-            {
-                cantidad: 14,
-                descuento: "8% OFF"
-            },
-            {
-                cantidad: 21,
-                descuento: "15% OFF"
+                nombre:
+                    "🍪 Masitas Diversión",
+
+                promociones: [
+
+                    {
+                        cantidad: 7,
+                        descuento: "5% OFF"
+                    },
+
+                    {
+                        cantidad: 14,
+                        descuento: "8% OFF"
+                    },
+
+                    {
+                        cantidad: 21,
+                        descuento: "15% OFF"
+                    }
+
+                ]
+
             }
-        ]
-    }
 
-};
+        };
 
 
         /* =========================
@@ -641,28 +895,51 @@
         ========================= */
 
         const galeria =
-            document.getElementById("galeria");
+            document.getElementById(
+                "galeria"
+            );
+
 
         const visor =
-            document.getElementById("visor");
+            document.getElementById(
+                "visor"
+            );
+
 
         const imagenGrande =
-            document.getElementById("imagenGrande");
+            document.getElementById(
+                "imagenGrande"
+            );
+
 
         const numeroImagen =
-            document.getElementById("numeroImagen");
+            document.getElementById(
+                "numeroImagen"
+            );
+
 
         const buscador =
-            document.getElementById("buscar");
+            document.getElementById(
+                "buscar"
+            );
+
 
         const tituloOfertas =
-            document.getElementById("tituloOfertas");
+            document.getElementById(
+                "tituloOfertas"
+            );
+
 
         const btnTodos =
-            document.getElementById("btnTodos");
+            document.getElementById(
+                "btnTodos"
+            );
+
 
         const btnOfertas =
-            document.getElementById("btnOfertas");
+            document.getElementById(
+                "btnOfertas"
+            );
 
 
         /* =========================
@@ -682,57 +959,121 @@
 
             galeria.innerHTML = "";
 
+
             for (
                 let i = 1;
                 i <= TOTAL_IMAGENES;
                 i++
             ) {
 
+
                 const producto =
-                    document.createElement("div");
+                    document.createElement(
+                        "div"
+                    );
+
 
                 producto.className =
                     "producto";
 
-                producto.dataset.numero = i;
+
+                producto.dataset.numero =
+                    i;
 
 
-                const esOferta =
+                const oferta =
                     OFERTAS[i];
 
 
                 let contenido = `
+
                     <img
                         src="${i}.png"
                         alt="Producto ${i}"
                         loading="lazy"
                     >
+
                 `;
 
 
-                /* SI ES OFERTA */
+                /* =========================
+                   SI ES OFERTA
+                ========================= */
 
-                if (esOferta) {
+                if (oferta) {
+
+
+                    let promocionesHTML =
+                        "";
+
+
+                    oferta.promociones
+                        .forEach(
+                            promocion => {
+
+
+                                promocionesHTML += `
+
+                                    <div
+                                        class="promocion">
+
+                                        🔥 Llevando
+
+                                        <strong>
+                                            ${promocion.cantidad}
+                                        </strong>
+
+                                        →
+
+                                        <strong>
+                                            ${promocion.descuento}
+                                        </strong>
+
+                                    </div>
+
+                                `;
+
+                            }
+                        );
+
 
                     contenido += `
 
-                        <div class="etiqueta-oferta">
+                        <div
+                            class="etiqueta-oferta">
+
                             🔥 OFERTA
+
                         </div>
 
-                        <div class="info-producto">
 
-                            <div class="precio-anterior">
-                                ${esOferta.precioAnterior}
+                        <div
+                            class="info-producto">
+
+
+                            <div
+                                class="nombre-producto">
+
+                                ${oferta.nombre}
+
                             </div>
 
-                            <div class="precio-oferta">
-                                ${esOferta.precioOferta}
+
+                            <div
+                                class="promociones">
+
+                                ${promocionesHTML}
+
                             </div>
 
-                            <div class="texto-oferta">
-                                💥 ¡Precio especial!
+
+                            <div
+                                class="llamada-oferta">
+
+                                💥 ¡Aprovechá esta promoción!
+
                             </div>
+
 
                         </div>
 
@@ -745,29 +1086,40 @@
                     contenido;
 
 
-                /* ABRIR VISOR */
+                /* =========================
+                   ABRIR VISOR
+                ========================= */
 
-                producto.onclick = function() {
+                producto.onclick =
+                    function() {
 
-                    abrirVisor(i);
+                        abrirVisor(i);
 
-                };
+                    };
 
 
-                /* SI LA IMAGEN NO EXISTE */
+                /* =========================
+                   IMAGEN NO EXISTE
+                ========================= */
 
                 const imagen =
-                    producto.querySelector("img");
-
-                imagen.onerror = function() {
-
-                    producto.style.display =
-                        "none";
-
-                };
+                    producto.querySelector(
+                        "img"
+                    );
 
 
-                galeria.appendChild(producto);
+                imagen.onerror =
+                    function() {
+
+                        producto.style.display =
+                            "none";
+
+                    };
+
+
+                galeria.appendChild(
+                    producto
+                );
 
             }
 
@@ -782,14 +1134,23 @@
 
             modoOfertas = false;
 
+
             buscador.value = "";
+
 
             tituloOfertas.style.display =
                 "none";
 
-            btnTodos.classList.add("activa");
 
-            btnOfertas.classList.remove("activa");
+            btnTodos.classList.add(
+                "activa"
+            );
+
+
+            btnOfertas.classList.remove(
+                "activa"
+            );
+
 
             mostrarImagenes();
 
@@ -804,16 +1165,26 @@
 
             modoOfertas = true;
 
+
             buscador.value = "";
+
 
             tituloOfertas.style.display =
                 "block";
 
-            btnTodos.classList.remove("activa");
 
-            btnOfertas.classList.add("activa");
+            btnTodos.classList.remove(
+                "activa"
+            );
+
+
+            btnOfertas.classList.add(
+                "activa"
+            );
+
 
             mostrarImagenes();
+
 
             const productos =
                 document.querySelectorAll(
@@ -821,19 +1192,25 @@
                 );
 
 
-            productos.forEach(producto => {
+            productos.forEach(
+                producto => {
 
-                const numero =
-                    producto.dataset.numero;
 
-                if (!OFERTAS[numero]) {
+                    const numero =
+                        producto.dataset.numero;
 
-                    producto.style.display =
-                        "none";
+
+                    if (
+                        !OFERTAS[numero]
+                    ) {
+
+                        producto.style.display =
+                            "none";
+
+                    }
 
                 }
-
-            });
+            );
 
         }
 
@@ -862,14 +1239,14 @@
             productos.forEach(
                 producto => {
 
+
                     const numero =
                         producto.dataset.numero;
 
 
                     /*
-                     * Si estamos en OFERTAS,
-                     * solamente buscamos
-                     * dentro de las ofertas.
+                     * En la pestaña de ofertas
+                     * solo mostramos las ofertas.
                      */
 
                     if (
@@ -882,31 +1259,12 @@
 
                         return;
 
-                    } 
-                    const OFERTAS = {
-
-    1: {
-        nombre: "Masitas Diversión",
-
-        promociones: [
-            {
-                cantidad: 7,
-                descuento: "5% OFF"
-            },
-            {
-                cantidad: 14,
-                descuento: "8% OFF"
-            },
-            {
-                cantidad: 21,
-                descuento: "15% OFF"
-            }
-        ]
-    }
-
-};
+                    }
 
 
+                    /*
+                     * Buscar por número
+                     */
 
                     if (
                         numero.includes(texto)
@@ -928,7 +1286,9 @@
             );
 
 
-            /* MENSAJE */
+            /* =========================
+               MENSAJE SIN RESULTADOS
+            ========================= */
 
             let mensaje =
                 document.getElementById(
@@ -936,23 +1296,31 @@
                 );
 
 
-            if (encontrados === 0) {
+            if (
+                encontrados === 0
+            ) {
+
 
                 if (!mensaje) {
+
 
                     mensaje =
                         document.createElement(
                             "div"
                         );
 
+
                     mensaje.id =
                         "sinResultados";
+
 
                     mensaje.className =
                         "sin-resultados";
 
+
                     mensaje.textContent =
                         "No se encontró ningún producto.";
+
 
                     galeria.appendChild(
                         mensaje
@@ -960,7 +1328,9 @@
 
                 }
 
+
             } else {
+
 
                 if (mensaje) {
 
@@ -979,11 +1349,16 @@
 
         function abrirVisor(numero) {
 
-            imagenActual = numero;
+            imagenActual =
+                numero;
+
 
             actualizarVisor();
 
-            visor.style.display = "flex";
+
+            visor.style.display =
+                "flex";
+
 
             document.body.style.overflow =
                 "hidden";
@@ -998,10 +1373,14 @@
         function actualizarVisor() {
 
             imagenGrande.src =
-                imagenActual + ".png";
+                imagenActual +
+                ".png";
+
 
             imagenGrande.alt =
-                "Producto " + imagenActual;
+                "Producto " +
+                imagenActual;
+
 
             numeroImagen.textContent =
                 imagenActual +
@@ -1020,6 +1399,7 @@
             visor.style.display =
                 "none";
 
+
             document.body.style.overflow =
                 "auto";
 
@@ -1027,41 +1407,48 @@
 
 
         /* =========================
-           ANTERIOR
+           IMAGEN ANTERIOR
         ========================= */
 
         function imagenAnterior() {
 
             imagenActual--;
 
-            if (imagenActual < 1) {
+
+            if (
+                imagenActual < 1
+            ) {
 
                 imagenActual =
                     TOTAL_IMAGENES;
 
             }
 
+
             actualizarVisor();
 
         }
 
 
         /* =========================
-           SIGUIENTE
+           IMAGEN SIGUIENTE
         ========================= */
 
         function imagenSiguiente() {
 
             imagenActual++;
 
+
             if (
                 imagenActual >
                 TOTAL_IMAGENES
             ) {
 
-                imagenActual = 1;
+                imagenActual =
+                    1;
 
             }
+
 
             actualizarVisor();
 
@@ -1069,12 +1456,13 @@
 
 
         /* =========================
-           CLICK AFUERA
+           CERRAR AL HACER CLICK AFUERA
         ========================= */
 
         visor.addEventListener(
             "click",
             function(event) {
+
 
                 if (
                     event.target === visor
@@ -1096,6 +1484,9 @@
             "keydown",
             function(event) {
 
+
+                /* ESC */
+
                 if (
                     event.key === "Escape" &&
                     visor.style.display === "flex"
@@ -1105,6 +1496,9 @@
 
                 }
 
+
+                /* IZQUIERDA */
+
                 if (
                     event.key === "ArrowLeft" &&
                     visor.style.display === "flex"
@@ -1113,6 +1507,9 @@
                     imagenAnterior();
 
                 }
+
+
+                /* DERECHA */
 
                 if (
                     event.key === "ArrowRight" &&
@@ -1128,7 +1525,7 @@
 
 
         /* =========================
-           CARGAR
+           CARGAR GALERÍA
         ========================= */
 
         mostrarImagenes();
